@@ -1,23 +1,23 @@
 Package.describe({
-  name: 'iron:controller',
-  summary: 'Controller class for dynamic layouts.',
-  version: '1.0.12',
-  git: 'https://github.com/iron-meteor/iron-controller'
+  name: 'meteorhubdotnet:firestorm-iron-controller',
+  summary: 'Fork of iron:controller for Firestorm',
+  version: '1.0.0',
+  git: 'https://github.com/meteorhubdotnet/firestorm-iron-controller'
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom('METEOR@0.9.2');
+  api.versionsFrom('METEOR@2.2');
 
   api.use('underscore');
   api.use('tracker'); // reactivity
   api.use('reactive-dict'); // reactive state variables
   api.use('templating');
 
-  api.use('iron:core@1.0.11');
-  api.imply('iron:core');
+  api.use('meteorhubdotnet:firestorm-iron-core');
+  api.imply('meteorhubdotnet:firestorm-iron-core');
 
-  api.use('iron:layout@1.0.12');
-  api.use('iron:dynamic-template@1.0.12');
+  api.use('meteorhubdotnet:firestorm-iron-layout');
+  api.use('meteorhubdotnet:firestorm-iron-dynamic-template');
 
   api.add_files('lib/wait_list.js', 'client');
   api.add_files('lib/controller.js');
@@ -26,8 +26,8 @@ Package.on_use(function (api) {
 });
 
 Package.on_test(function (api) {
-  api.use('iron:controller');
-  api.use('iron:layout');
+  api.use('meteorhubdotnet:firestorm-iron-controller');
+  api.use('meteorhubdotnet:firestorm-iron-layout');
   api.use('tinytest');
   api.use('test-helpers');
   api.use('tracker');
